@@ -1,0 +1,54 @@
+﻿Blue noise textures LDR_RGBA_0.DDS, LDR_RGBA_1.DDS, LDR_RGBA_2.DDS, and LDR_RGBA_3.DDS are converted from 
+LDR_RGBA_0.png, LDR_RGBA_1.png, LDR_RGBA_2.png, and LDR_RGBA_3.png in the G3D Invocation Engine.
+Following is the license.
+=============================================================================================
+
+The G3D Innovation Engine Core Components (G3D-base.lib, G3D-gfx.lib, G3D.lib, and data-files/shader) 
+are open source under the OSI-approved "Modified BSD" license. It is distributed 
+alongside several other libraries and data files that each have their own licenses.
+The contents of each subdirectory tree in the G3D Innovation Engine source tree 
+and distribution are governed by the "license.txt" or "license" file at the root of
+that tree.
+
+Note that the G3D Innovation Engine does not and cannot grant a license to these 
+other libraries. Your use of those libraries is governed by their own licenses,
+which the library maintainers believe but do not warrant are suitable for research,
+academic, open source, and independent game developer use without further licensing
+arrangements and are amenable to large-scale commercial development with further 
+licensing arrangements. 
+
+Commercial usage of FMOD products may require a separate license directly with Firelight Technologies. For details refer to www.fmod.com/files/public/LICENSE.TXT.
+Unless you exclude FMOD Studio from the G3D build using the G3D_NO_FMOD macro
+at compile time, you must credit "FMOD" (or "FMOD STUDIO") and "FIRELIGHT TECHNOLOGIES"
+in your product in documentation, or in an on screen format.
+
+The redistributed libraries include:
+
+* assimp    - BSD-style open source
+* civetweb  - BSD-style open source
+* zip       - BSD-style open source
+* zlib      - BSD-style open source
+* wave      - BSD-style open source
+* embree    - Apache open source
+* tbb       - apache open source
+* fmod      - FMOD Sound System, copyright (C) Firelight Technologies Pty, Ltd., 1994-2014.
+* FreeImage - FreeImage Public License - Version 1.0
+* ffMPEG    - GNU Lesser General Public License (LGPL) version 2.1
+* qrencode  - GNU Lesser General Public License (LGPL) version 2.1
+
+The non-BSD-style components can be excluded from the G3D build using the G3D_NO_XXX 
+macros. qrencode.lib is not linked to G3D.
+
+Content under data-files (excluding the shader subtree) are governed by a mixture of Creative Commons licenses and Public Domain.
+
+As a convenience, the G3D Innovation Engine produces the file g3d-license.txt
+for any program linked against it that contains the statemens listed below, which
+may aid developers in complying with the licenses of the distributed libraries. 
+However, it is the sole responsibility of the application developer to comply with
+these licenses and satisfy licensing arrangements.
+"
+--------------------------------------------------------------------------
+This program uses the G3D Innovation Engine (http://casual-effects.com/g3d), which
+is licensed under the "Modified BSD" Open Source license below.  The G3D Innovation Engine
+source code is Copyright © 2000-2014, Morgan McGuire, All rights reserved.
+-------------------------------------------------------------------------------------

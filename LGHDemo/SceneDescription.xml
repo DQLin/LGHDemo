@@ -1,0 +1,22 @@
+<!--This is an example file of all available arguments you can specify in this file-->
+<!--Change model path to your file and use appropriate camera position to view your model in LGHDemo-->
+<!--This xml file should be provided as an argument to the program, like "LGHDemo.exe SceneDescription.xml"-->
+<scenedescription>
+<light type="directional">
+  <intensity value="3.0"/>
+  <orietation value="0.5"/>
+  <inclination value="0.5"/>  
+</light>
+<camera>
+  <position x="5" y="5" z="5"/>
+  <target x="0" y="0" z="-1"/>
+  <up x="0" y="1" z="0"/>
+  <fov value="50"/>
+  <width value="1280"/>
+  <height value="720"/>
+  <near value="0.1"/>
+  <far value="1000"/>
+</camera>
+<model path="D:/Graphics/testmodels/san-miguel/san-miguel.obj">
+</model>
+</scenedescription>

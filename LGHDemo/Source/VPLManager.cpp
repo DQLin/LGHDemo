@@ -205,7 +205,9 @@ void VPLManager::UpdateAccelerationStructure()
 	}
 	else
 	{
-		ThrowIfFailed(pCommandList->QueryInterface(IID_PPV_ARGS(&m_dxrCommandList)), L"Couldn't get DirectX Raytracing interface for the command list.\n");
+		// this doesn't work for Windows 10 1903
+		// ThrowIfFailed(pCommandList->QueryInterface(IID_PPV_ARGS(&m_dxrCommandList)), L"Couldn't get DirectX Raytracing interface for the command list.\n");
+		m_dxrCommandList = reinterpret_cast<ID3D12GraphicsCommandList5*>(pCommandList);
 		UpdateAccelerationStructure(m_dxrCommandList.Get());
 		m_bvh_topLevelAccelerationStructurePointer.GpuVA = m_bvh_topLevelAccelerationStructure->GetGPUVirtualAddress();
 	}
@@ -452,7 +454,7 @@ void VPLManager::BuildAccelerationStructures()
 	}
 	else
 	{
-		ThrowIfFailed(pCommandList->QueryInterface(IID_PPV_ARGS(&m_dxrCommandList)), L"Couldn't get DirectX Raytracing interface for the command list.\n");
+		m_dxrCommandList = reinterpret_cast<ID3D12GraphicsCommandList5*>(pCommandList);
 		BuildAccelerationStructure(m_dxrCommandList.Get());
 		m_bvh_topLevelAccelerationStructurePointer.GpuVA = m_bvh_topLevelAccelerationStructure->GetGPUVirtualAddress();
 	}
@@ -994,7 +996,7 @@ bool VPLManager::GenerateVPLs(GraphicsContext & context, float VPLEmissionLevel,
 		}
 		else
 		{
-			ThrowIfFailed(pCommandList->QueryInterface(IID_PPV_ARGS(&m_dxrCommandList)), L"Couldn't get DirectX Raytracing interface for the command list.\n");
+			m_dxrCommandList = reinterpret_cast<ID3D12GraphicsCommandList5*>(pCommandList);
 			m_dxrCommandList->SetDescriptorHeaps(ARRAYSIZE(pDescriptorHeaps), pDescriptorHeaps);
 		}
 
@@ -1070,7 +1072,7 @@ void VPLManager::ComputeInstantRadiosity(GraphicsContext& context, int scrWidth,
 	}
 	else
 	{
-		ThrowIfFailed(pCommandList->QueryInterface(IID_PPV_ARGS(&m_dxrCommandList)), L"Couldn't get DirectX Raytracing interface for the command list.\n");
+		m_dxrCommandList = reinterpret_cast<ID3D12GraphicsCommandList5*>(pCommandList);
 		m_dxrCommandList->SetDescriptorHeaps(ARRAYSIZE(pDescriptorHeaps), pDescriptorHeaps);
 	}
 
@@ -1148,7 +1150,7 @@ void VPLManager::CastLGHShadowRays(GraphicsContext& context, int scrWidth, int s
 	}
 	else
 	{
-		ThrowIfFailed(pCommandList->QueryInterface(IID_PPV_ARGS(&m_dxrCommandList)), L"Couldn't get DirectX Raytracing interface for the command list.\n");
+		m_dxrCommandList = reinterpret_cast<ID3D12GraphicsCommandList5*>(pCommandList);
 		m_dxrCommandList->SetDescriptorHeaps(ARRAYSIZE(pDescriptorHeaps), pDescriptorHeaps);
 	}
 

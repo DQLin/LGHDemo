@@ -3,8 +3,8 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
-    <OutDir>$(SolutionDir)..\Build_VS15\$(Platform)\$(Configuration)\Output\$(ProjectName)\</OutDir>
-    <IntDir>$(SolutionDir)..\Build_VS15\$(Platform)\$(Configuration)\Intermediate\$(ProjectName)\</IntDir>
+    <OutDir>$(SolutionDir)..\$(ProjectName)\$(Platform)\$(Configuration)\Output\</OutDir>
+    <IntDir>$(SolutionDir)..\$(ProjectName)\$(Platform)\$(Configuration)\Intermediate\</IntDir>
     <IncludePath>$(SolutionDir)..\Build_VS15\$(Platform)\$(Configuration)\Output\$(ProjectName);$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup>
@@ -29,7 +29,7 @@
       <ShaderType>Compute</ShaderType>
       <ShaderModel>6.3</ShaderModel>
       <VariableName>g_p%(Filename)</VariableName>
-      <HeaderFileOutput>$(SolutionDir)$(ProjectName)\CompiledShaders\$(Configuration)\%(Filename).h</HeaderFileOutput>
+      <HeaderFileOutput>$(SolutionDir)..\(ProjectName)\CompiledShaders\$(Configuration)\%(Filename).h</HeaderFileOutput>
       <ObjectFileOutput />
     </FxCompile>
   </ItemDefinitionGroup>

@@ -1,0 +1,6 @@
+Core/CompiledShaders/
+Core/x64/
+LGHDemo/.vs/
+LGHDemo/CompiledShaders/
+LGHDemo/Intermediate/
+*.pdb

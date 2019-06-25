@@ -61,7 +61,10 @@ void VPLManager::Initialize(Model1* _model, int _numModels, int _maxUpdateFrames
 
 	if (m_raytracingAPI == RaytracingAPI::Auto)
 	{
-		if (FAILED(Graphics::g_Device->QueryInterface(IID_PPV_ARGS(&m_dxrDevice))))
+		D3D12_FEATURE_DATA_D3D12_OPTIONS5 featureSupportData;
+		if (FAILED(Graphics::g_Device->QueryInterface(IID_PPV_ARGS(&m_dxrDevice))) ||
+			FAILED(m_dxrDevice->CheckFeatureSupport(D3D12_FEATURE_D3D12_OPTIONS5, &featureSupportData, sizeof(featureSupportData))) ||
+			featureSupportData.RaytracingTier == D3D12_RAYTRACING_TIER_NOT_SUPPORTED)
 		{
 			std::cout << "DirectX Raytracing interfact not found, switching to the fallback layer" << std::endl;
 			CreateRaytracingFallbackDeviceFlags createDeviceFlags = CreateRaytracingFallbackDeviceFlags::ForceComputeFallback;
